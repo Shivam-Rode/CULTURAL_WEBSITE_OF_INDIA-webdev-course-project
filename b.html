@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian World Heritage Sites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #363232;
+        }
+        .Heading h1 {
+            color: #f3ecec;
+        }
+        .map-container {
+            margin: 105px;
+            position: relative;
+            display: inline-block;
+        }
+        .map-image {
+            width: 600px;
+            height: auto;
+            padding: 55px;
+        }
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .white { background-color: rgb(228, 221, 221); }
+        .green { background-color: green; }
+
+        .info-card {
+            position: absolute;
+            width: 220px;
+            background: rgb(235, 229, 229);
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(232, 142, 39, 0.2);
+            padding: 10px;
+            display: none;
+            z-index: 10;
+        }
+        .info-card img {
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+        }
+        .info-card h3 {
+            margin: 5px 0;
+            font-size: 14px;
+            color: rgb(155, 88, 228);
+        }
+        .info-card p {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        .info-card a {
+            color: rgb(10, 2, 30);
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
+       
+      
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f97316;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar img {
+            padding-left: 40px;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 16px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
+        .sign-in {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 6px 16px;
+        }
+        .sign-in:hover {
+            background-color: white;
+            color: #f97316;
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 66%;
+            background-color: #f97316;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+
+
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .popup {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            max-width: 250px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .popup img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .popup .message {
+            font-size: 14px;
+        }
+        .popup.hide {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <img src="/logo.png" alt="Logo">
+        <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+        <nav class="nav-links">
+            <a href="map.html">Map</a>
+            <a href="b.html" target="_blank">Heritage Site</a>
+            <a href="geographic.html">Geography</a>
+            <a href="religion.html">Religion</a>
+            <a href="festivals.html">Festival</a>
+            <a href="art.html">Art</a>
+            <a href="newsletter.html" class="sign-in">Join Newsletter</a>
+        </nav>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu">
+        <button id="menu-close" class="menu-close">&times;</button>
+        <a href="map.html">Map</a>
+        <a href="b.html" target="_blank">Heritage Site</a>
+        <a href="geographic.html">Geography</a>
+        <a href="religion.html">Religion</a>
+        <a href="festivals.html">Festival</a>
+        <a href="art.html">Art</a>
+        <a href="newsletter.html" class="sign-in">Join newsletter</a>
+    </nav>
+
+<div class="Heading">
+    <h1>UNESCO World Heritage Sites In India</h1>
+</div>
+<div class="map-container">
+    <img src="1map-removebg-preview.png" class="map-image" alt="India Map">
+    
+    
+    <div class="dot white" style="top: 36%; left: 25%;" data-id="1"></div>
+    <div class="dot white" style="top: 34%; left: 43%;" data-id="2"></div>
+    <div class="dot green" style="top: 37%; left: 79%;" data-id="3"></div>
+    <div class="dot white" style="top: 61%; left: 25%;" data-id="4"></div>
+    <div class="dot white" style="top: 61%; left: 26%" data-id="5"></div>
+    <div class="dot white" style="top: 58%; left: 31.9%;" data-id="6"></div>
+    <div class="dot white" style="top: 56%; left: 33%;" data-id="7"></div>
+    <div class="dot white" style="top: 55%; left: 65%;" data-id="8"></div>
+    <div class="dot white" style="top: 49%; left: 40%;" data-id="9"></div>
+    <div class="dot green" style="top: 23%; left: 40%;" data-id="10"></div>
+    <div class="dot white" style="top: 80%; left: 45%;" data-id="11"></div>
+
+
+</div>
+
+<div class="info-card" id="info-card">
+    <img src="" id="card-image" alt="Site Image">
+    <h3 id="card-title"></h3>
+    <p id="card-location"></p>
+    <a href="#" id="card-link" target="_blank">More Details</a>
+</div>
+
+
+
+
+
+
+
+<div class="popup" id="popup">
+    <img id="popup-img" src="emoji2.png" alt="Indian Man">
+    <div class="message" id="popup-message">Hey! Try hovering your mouse over those dots and witness the magic.</div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    const heritageSites = {
+        1: {
+            title: "Hill Forts of Rajasthan (2013)",
+            location: "Rajasthan",
+            image: "hill-forts.jpeg",
+            link: "https://whc.unesco.org/en/list/247/"
+        },
+        2: {
+            title: "Taj Mahal",
+            location: "Uttar Pradesh",
+            image: "taj-mahal.jpeg",
+            link: "https://www.tajmahal.gov.in/"
+        },
+        3: {
+            title: "Kaziranga National Park",
+            location: "Assam",
+            image: "kaziranga.jpeg",
+            link: "https://www.kaziranga-national-park.com/"
+        },
+        5: {
+            title: "Chhatrapati Shivaji Terminus(2004)",
+            location: "Maharashtra",
+            image: "csmt.jpeg",
+            link: "https://whc.unesco.org/en/list/945/"
+        },
+        4: {
+            title: "Elephanta Caves",
+            location: "Maharashtra",
+            image: "Elephanta_caves.jpg",
+            link: "https://whc.unesco.org/en/list/244/"
+        },
+        6: {
+            title: "Ellora caves",
+            location: "Maharashtra",
+            image: "ellora.jpg",
+            link: "https://whc.unesco.org/en/list/243/"
+        },
+        7: {
+            title: "Ajanta Caves",
+            location: "Maharashtra",
+            image: "ajanta.jpg",
+            link: "https://whc.unesco.org/en/list/242/"
+        },
+        8: {
+            title: "Sun Temple",
+            location: "Odissa",
+            image: "Konarka.jpg",
+            link: "http://www.thekonark.in/"
+        },
+        9: {
+            title: "Bhimbetka",
+            location: "Madhya Pradesh",
+            image: "bhimbetka.jpg",
+            link: "https://whc.unesco.org/en/list/925/"
+        },
+        10: {
+            title: "Great Himalayan National Park",
+            location: "Himachal Pradesh",
+            image: "himalayas.jpg",
+            link: "https://www.greathimalayannationalpark.org/"
+        },
+        11: {
+            title: "Group of Monuments at Mahabalipuram",
+            location: "Tamil Nadu",
+            image: "Tamil Nadu.jpg",
+            link: "https://whc.unesco.org/en/list/249/"
+        }
+    };
+
+    const dots = document.querySelectorAll('.dot');
+    const infoCard = document.getElementById('info-card');
+    const cardImage = document.getElementById('card-image');
+    const cardTitle = document.getElementById('card-title');
+    const cardLocation = document.getElementById('card-location');
+    const cardLink = document.getElementById('card-link');
+
+    dots.forEach(dot => {
+        dot.addEventListener('mouseover', (event) => {
+            const site = heritageSites[event.target.dataset.id];
+            if (site) {
+                cardImage.src = site.image;
+                cardTitle.textContent = site.title;
+                cardLocation.textContent = site.location;
+                cardLink.href = site.link;
+
+                infoCard.style.display = 'block';
+                infoCard.style.top = (event.clientY - 50) + 'px';
+                infoCard.style.left = (event.clientX + 10) + 'px';
+            }
+        });
+
+        dot.addEventListener('mouseout', () => {
+            setTimeout(() => {
+                if (!infoCard.matches(':hover')) {
+                    infoCard.style.display = 'none';
+                }
+            }, 200);
+        });
+    });
+
+    infoCard.addEventListener('mouseover', () => {
+        infoCard.style.display = 'block';
+    });
+
+    infoCard.addEventListener('mouseout', () => {
+        setTimeout(() => {
+            if (!infoCard.matches(':hover')) {
+                infoCard.style.display = 'none';
+            }
+        }, 200);
+    });
+    
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuClose = document.getElementById("menu-close");
+        
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+        });
+        menuClose.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+        });
+    
+</script>
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const popup = document.getElementById('popup');
+        const popupMessage = document.getElementById('popup-message');
+        const popupImg = document.getElementById('popup-img');
+        
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('mouseover', () => {
+                popupMessage.textContent = "Good! Explore the UNESCO sites in India";
+                popupImg.src = "emoji1.png"; 
+            });
+            dot.addEventListener('mouseout', () => {
+                popupMessage.textContent = "Hey! Try hovering your mouse over those dots and witness the magic.";
+                popupImg.src = "emoji2.png"; 
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Indian Engineering Marvels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(27, 21, 21);
+            color: #F97316;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        h2{
+        color:#ff7f00 ;
+        }
+        .navbar {
+            background-color: #ff7f00 !important;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            background: white;
+            color: #F97316 !important;
+            transition: 0.3s;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 100px 0 40px 0;
+            color: white;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card {
+            background: rgb(247, 245, 244);
+            border: 2px solid #dd8d54;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(41, 37, 33, 0.5);
+            transition: transform 0.3s, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('body').css('opacity', '1');
+            $('.card').each(function(index) {
+                $(this).delay(200 * index).animate({opacity: 1, transform: 'scale(1)'}, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a href="map.html" class="nav-link">Map</a></li>
+                    <li class="nav-item"><a href="/b.html" class="nav-link">Heritage Site</a></li>
+                    <li class="nav-item"><a href="geographic.html" class="nav-link">Geography</a></li>
+                    <li class="nav-item"><a href="religion.html" class="nav-link">Religion</a></li>
+                    <li class="nav-item"><a href="festivals.html" class="nav-link">Festival</a></li>
+                    <li class="nav-item"><a href="art.html" class="nav-link">Art</a></li>
+                    <li class="nav-item"><a href="newsletter.html" class="btn btn-outline-light">Join Newletter</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">Ancient Indian Engineering Marvels</h1>
+    </div>
+    <div class="container d-flex flex-wrap justify-content-center py-4" style="margin-top: 20px;">
+        <div class="card">
+            <img src="ellora.jpg" alt="Ellora Caves">
+            <h2>Ellora Caves</h2>
+            <p>Built using advanced rock-cutting technology, the Kailasa Temple was carved from a single rock using a top-down excavation method.</p>
+        </div>
+        <div class="card">
+            <img src="Konark.jpg" alt="Konark Sun Temple">
+            <h2>Konark Sun Temple</h2>
+            <p>Astronomically aligned temple with giant sundials and interlocking architecture reinforced with iron clamps.</p>
+        </div>
+        <div class="card">
+            <img src="bris.jpg" alt="Brihadeeswarar Temple">
+            <h2>Brihadeeswarar Temple</h2>
+            <p>Constructed using interlocking stone technology, the temple features a massive granite dome without any binding material.</p>
+        </div>
+        <div class="card">
+            <img src="rani.jpg" alt="Rani ki Vav">
+            <h2>Rani ki Vav</h2>
+            <p>Stepwell designed with advanced water conservation techniques and intricate carvings showcasing ancient engineering brilliance.</p>
+        </div>
+        <div class="card">
+            <img src="vic.jpg" alt="Victoria Memorial">
+            <h2>Victoria Memorial</h2>
+            <p>Built using a mix of Indo-Saracenic architecture, incorporating advanced dome engineering and marble construction.</p>
+        </div>
+        <div class="card">
+            <img src="meen.jpg" alt="Meenakshi Temple">
+            <h2>Meenakshi Temple</h2>
+            <p>Known for its towering gopurams, intricate sculptures, and earthquake-resistant foundation.</p>
+        </div>
+        <div class="card">
+            <img src="sanchi.jpg" alt="Sanchi Stupa">
+            <h2>Sanchi Stupa</h2>
+            <p>Hemispherical dome built using dry masonry construction techniques to ensure stability.</p>
+        </div>
+        <div class="card">
+            <img src="mahabali.jpg" alt="Mahabalipuram Temple">
+            <h2>Mahabalipuram Temples</h2>
+            <p>Rock-cut temples with water-resistant foundations and erosion-resistant stone architecture.</p>
+        </div>
+        <div class="card">
+            <img src="pillar.jpg" alt="Iron Pillar of Delhi">
+            <h2>Iron Pillar of Delhi</h2>
+            <p>Rust-proof iron metallurgy used to construct a 1,600-year-old iron pillar that has withstood time.</p>
+        </div>
+    </div>
+</body>
+</html>

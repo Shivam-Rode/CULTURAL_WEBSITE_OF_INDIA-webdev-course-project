@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Cards: Dance & Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body { background-color: black; color: white; padding-top: 80px; }
+    .card { background-color: white; color: black; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+    .card-img-top { height: 200px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <div class="fixed-top bg-orange-500 shadow-md" style="background-color: #ff7f00;">
+    <div class="d-flex justify-content-between align-items-center px-4 py-2">
+      <img src="/logo.png" alt="Logo" style="height: 40px;">
+      <nav class="d-none d-md-flex gap-3">
+        <a href="map.html" class="text-dark text-decoration-none">Map</a>
+        <a href="/b.html" class="text-dark text-decoration-none">Heritage Site</a>
+        <a href="geographic.html" class="text-dark text-decoration-none">Geography</a>
+        <a href="religion.html" class="text-dark text-decoration-none">Religion</a>
+        <a href="festivals.html" class="text-dark text-decoration-none">Festival</a>
+        <a href="art.html" class="text-dark text-decoration-none">Art</a>
+        <a href="newsletter.html" class="btn btn-outline-light">Join newsletter</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mb-4 h-200">
+        <div class="card">
+          <img src="dance.webp" class="card-img-top" alt="Indian Dance">
+          <div class="card-body">
+            <h5 class="card-title">Dance</h5>
+           
+            <p class="card-text">Indian dance forms such as Bharatanatyam, Kathak, and Odissi are rich in tradition, expressing stories through rhythm, expression, and graceful movements.</p>
+            <a href="dance.html" target="_blank" class="learn-more-button">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4 h-200">
+        <div class="card">
+          <img src="music.jpg" class="card-img-top" alt="Indian Music">
+          <div class="card-body">
+            <h5 class="card-title">Music</h5>
+            
+            <p class="card-text">Indian music, encompassing classical styles like Hindustani and Carnatic, features soulful ragas and unique instruments such as the sitar and tabla.</p>
+            <a href="music.html" target="_blank" class="learn-more-button">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

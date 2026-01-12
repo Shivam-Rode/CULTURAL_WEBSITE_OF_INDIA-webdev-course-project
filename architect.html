@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architechture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #1a1a1a;
+            
+        }
+        h1{
+            background: #F97316;
+            text-align: center;
+        }
+        .header1 {
+            background: #F97316;
+            color: #1a1a1a;
+            padding: 15px;
+        }
+        .header-content1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content1 img {
+            height: 50px;
+        }
+        .header-content1 nav a {
+            color: #1a1a1a;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .main-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            flex: 1;
+            padding: 20px;
+        }
+        .carousel-container {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            height: 700px;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sidebar {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            height: 700px;
+            overflow: hidden;
+        }
+        .bottom-container {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            height: 250px;
+            overflow-y: 500px;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header1">
+        <div class="header-content1">
+            <img src="logo.png" alt="Logo">
+            <h1>Architecture Sites</h1>
+            <nav>
+                <a href="map.html" target="_blank">Map</a>
+                <a href="/b.html" target="_blank">Heritage Site</a>
+                <a href="geographic.html">Geography</a>
+                <a href="religion.html">Religion</a>
+                <a href="festivals.html">Festival</a>
+                <a href="art.html" target="_blank">Art</a>
+                <a href="newsletter.html" class="sign-in">Join newsletter</a>
+
+            </nav>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="carousel-container">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Tajmahal.jpg" class="d-block w-100" alt="Himalayas 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="HumayunTomb.jpg" class="d-block w-100" alt="Himalayas 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Akshardham-temple.jpg" class="d-block w-100" alt="Himalayas 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lotus-temple.jpg" class="d-block w-100" alt="Himalayas 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="rajasthan-havelis.jpg" class="d-block w-100" alt="Himalayas 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="ajanta-cave.jpg" class="d-block w-100" alt="Himalayas 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sun-temple-konark.jpg" class="d-block w-100" alt="Himalayas 3">
+                    </div>
+                 
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h1>Architecture of India</h1>
+            <p>Indian architecture is rooted in the history, culture, and religion of India. Among several architectural styles and traditions, the best-known include the many varieties of Hindu temple architecture and Indo-Islamic architecture, especially Rajput architecture, Mughal architecture, South Indian architecture, and Indo-Saracenic architecture. Early Indian architecture was made from wood, which did not survive due to rotting and instability in the structures. Instead, the earliest existing architecture are made with Indian rock-cut architecture, including many Buddhist, Hindu, and Jain temples.</p>
+            <p>The Hindu temple architecture is divided into the Dravidian style of southern India and the Nagara style of northern India, with other regional styles. Housing styles also vary between regions, depending on climate.</p>
+<p>
+                The first major Islamic kingdom in India was the Delhi Sultanate, which led to the development of Indo-Islamic architecture, combining Indian and Islamic features. The rule of the Mughal Empire, when Mughal architecture evolved, is regarded as the zenith of Indo-Islamic architecture, with the Taj Mahal being the high point of their contribution. Indo-Islamic architecture influenced the Rajput and Sikh styles as well.</p>
+        </div>
+        <div class="bottom-container">
+            <h1>Taj Mahal</h1>
+            <p>One of the seven wonders of the world, the epitome of love, the Taj Mahal is a huge mausoleum of white marble in the district of Agra in Uttar Pradesh, India. It is one of the most famous buildings around the world which is visited by millions of tourists from across the world every year. A witness to the great historical happenings of the Mughal Era, this construction was built by the Mughal King Shahjahan in memory of his beloved wife Mumtaz Mahal.
+
+                Approx. 20,000 stone carvers, craftsperson, and artists were hired from different corners of the country along with artists from Iraq and Turkey. They worked for around 17 years at a stretch to give a shape to this wonder. This gorgeous heritage site is set amidst lush greenery and River Yamuna flows at the backdrop of this magnificent site.
+                
+                The main abode is set on a platform where minarets, arch-and-dome profile of pristine white marble and intricate designs mesmerize the tourists. The painstaking details on its walls, entrance, and roofs reflect the Pietra Dura form of art and give a detailed idea about the advancement of fine arts in Mughal-ruled India.
+                
+                Inlaid semi-precious stones are carved in Koranic verse on calligraphy and there is a prevailing belief that these are prayers written in Arabic language. On both side of the main mausoleum two red sandstone buildings looks as fine contrasting element. The building on the western side is a mosque while the other is a guesthouse of Mughal age.</p>
+        </div>
+        <div class="bottom-container">
+            <h1>HumayunTomb</h1>
+
+            <p>After the death of Humayun, his eldest wife Bega Begam took initiative to build this tomb. In 1569, she employed Mirak Mirza Ghiyath, a Persian architect to build this wonderful monument. This red sandstone tomb is built ramidst a square garden divided into four main parterres known as charbagh. At the centre of this garden a shallow water-channel can be seen. There are two double-storeyed gateways on the west and south of the monument. The centre of the western wall is occupied by a baradari (pavilion) and a hammam( bathroom) is found at the centre of northern wall.
+
+                The mausoleum is set on a high, wide and terraced platform. Across the sides small arched cells add to its architectural importance. It is designed like an asymmetrical octagon with four long and four short sides. A 42.5m high double dome is designed with marble and edged by exclusively carved chhatris (pillared kiosks). The interior is a spacious chamber which is octagonal in shape and set with domed roof compartments. The chamber is again interconnected with galleries and corridors. The entire structure is built with red sand stone with white and black inlaid marble borders..</p>
+        </div>
+        <div class="bottom-container">            <h1>Akshardham-temple</h1>
+
+            <p>Acclaimed as the world’s second largest Hindu temple after the Akshardham Temple in Gandhinagar, Akshardham Temple in Delhi is a recent addition to the architectural gems of India. The temple was inaugurated on 6th November 2005 and it took 5 years and efforts of 11000 artisans for its massive construction to be completed. Akshardham Temple in Delhi is a part of the Bochasanwasi Shri Akshar Purushottam Swaminarayan Sanstha or BAPS. Made of pink stone and white marble, structure of Akshardham Temple consists of intricately carved pillars and domes decorated with stone statues and figurines depicting scenes from Indian mythology. The spectacular beauty and grandeur of Akshardham Temple is sure to leave you mesmerized..</p>
+        </div>
+        <div class="bottom-container">            <h1>Lotus-temple</h1>
+
+            <p>Lotus Temple, also known as the Bahai Temple was constructed in 1986 to bring together different religious faiths on the same platform. The temple’s architecture reflects the shape of a half open Lotus flower. The structure is made of pure white marble and consists of 3 sets of 9 Lotus petals. Enclosed within these petals, is the meditation hall where followers of any faith can go and pray. Around the petals, you will notice 9 pools of water that look spectacular during night when colourful lights fall on the waters. The architecture and design of the Lotus Temple is worth appreciating the architectural skills of the Iranian-Canadian architect, Fariburz Sahba, who commemorated its design</p>
+        </div>
+    
+        <div class="bottom-container">            <h1>Rajasthan-Havelis</h1>
+
+            <p>Havelis of Rajasthan, built in Rajput and Islamic styles of architecture, are known for their distinct designs and exquisitely carved sandstone facades, latticed balconies and interior walls adorned with mural paintings. ‘Patwon ki Haveli’, ‘Nathmal ki Haveli’ and ‘Salim ki Haveli’ are worth visiting in Jaisalmer. Shekhawati is another region in Rajasthan that is worth including in your itinerary; ancient havelis of this place are a treat to eyes. If you are in Rajasthan, then a heritage tour of these havelis is a must</p>
+        </div>      <div class="bottom-container">            <h1>Sanchi</h1>
+
+            <p>Sanchi is a small town famous for its oldest Buddhist monuments dating back to the Mauryan era between 3rd century BC and 12th century AD. Most significant of these monuments is the ‘Sanchi Stupa’ that was carved out of a semi-circular rock. The eye-catching design and architecture of the stupa displays an austere grandeur of its times. The 4 gateways to the stupa are adorned with exquisite carvings depicting the life of Lord Buddha.</p>
+        </div>      <div class="bottom-container">            <h1>Taj Mahal</h1>
+
+            <p>One of the most visited tourist attractions in India, these caves boast of the glorious architectural splendours of the Buddhist monks in ancient India. Dating back to the Gupta period, the sculptures and paintings on the walls of the Ajanta & Ellora Caves depict incidents from the life of Lord Buddha, most interesting of which are the Jataka tales. The paintings in these caves are considered to be an epitome of artistic creativity and a tribute to the craftsmanship of the sculptors of the bygone era.</p>
+        </div>      <div class="bottom-container">            <h1>Sun Temple</h1>
+
+            <p>Located on the shore of Bay of Bengal, Sun Temple-Konark is the main attraction of Konark tourism. It is situated in the Puri district of Orissa. The temple was constructed under the patronage of King Narasimhadeva I of Eastern Ganga Dynasty. It is dedicated to Sun God of Hindu mythology and resembles the shape of gigantic chariot fitted with giant wheels. Every nook and corner of the temple is carved with various stone sculpture depicting different identities and activities.
+
+                The temple has 24 carved wheels divided into 12 pairs. To draw the chariot, seven giant stone horses are tied to it. The temple is designed with refined iconographical depictions of the life and activities of contemporary era. The space between the wheels and the plinth of the temple is adorned with the eclectic shapes of wonderful lions, dancer-musicians, and different postures of erotic groups.
+                
+                The temple is further divided into spatial units. The Vimana was surmounted by a tall tower with a shikhara(crowning cap). Though a major part of the temple is under ruin, yet the grandeur of the temple is highly praiseworthy and significant from tourists' point of view. The main entrance of the temple is constructed in such a manner that first rays of sunrise bathe it with all brightness. The audience hall of the temple is around 128 feet tall. Other significant structures found in temple premise are Nata Mandapa (dancing hall) and Bhoga Mandapa (dining hall).</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

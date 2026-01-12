@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance</title>
+    <link rel="stylesheet" href="art01.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+<style>
+      
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f97316;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    .navbar img {
+        padding-left: 40px;
+    }
+    .menu-toggle {
+        font-size: 24px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 16px;
+        transition: 0.3s;
+    }
+    .nav-links a:hover {
+        color: white;
+    }
+    .sign-in {
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 6px 16px;
+    }
+    .sign-in:hover {
+        background-color: white;
+        color: #f97316;
+    }
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 66%;
+        background-color: #f97316;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+    .menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+        .nav-links {
+            display: none;
+        }
+    }
+
+    .learn-more-button {
+            background-color: orange;
+            /* display:flex; */
+            /* align-items: center; */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .learn-more-button:hover {
+            background-color: darkorange;
+        }
+        .popup {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            max-width: 250px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .popup img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .popup .message {
+            font-size: 14px;
+        }
+        .popup.hide {
+            display: none;
+        }
+
+</style>
+</head>
+<body>
+
+     
+    <div class="navbar">
+        <img src="/logo.png" alt="Logo">
+        <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+        <nav class="nav-links">
+            <a href="map.html">Map</a>
+            <a href="/b.html" target="_blank">Heritage Site</a>
+            <a href="geographic.html">Geography</a>
+            <a href="religion.html">Religion</a>
+            <a href="festivals.html">Festival</a>
+            <a href="/art.html">Art</a>
+            <a href="newsletter.html" class="sign-in">Join Newsletter</a>
+        </nav>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu">
+        <button id="menu-close" class="menu-close">&times;</button>
+        <a href="map.html">Map</a>
+        <a href="/b.html" target="_blank">Heritage Site</a>
+        <a href="geographic.html">Geography</a>
+        <a href="religion.html">Religion</a>
+        <a href="festivals.html">Festival</a>
+        <a href="art.html">Art</a>
+        <a href="newsletter.html" class="sign-in">Join Newsletter</a>
+    </nav>
+    <span class="home-emoji" onclick="goToHome()">🏠</span>
+ 
+    <div class="heading">
+        <h1>Traditional Indian Dance styles</h1>
+    </div>
+    <div class="container">
+        <div class="item"><img src="/bharatnatyam.jpg" alt=""></div>
+        <div class="item"><img src="/lavni.jpg" alt=""></div>
+        <div class="item"><img src="/bhangra.webp" alt=""></div>
+        <div class="item"><img src="/bihu.jpg" alt=""></div>
+        <div class="item"><img src="/kathak.jpeg" alt=""></div>
+        <div class="item"><img src="/kathakali.jpg" alt=""></div>
+        <div class="item"><img src="/odissi.jpg" alt=""></div>
+
+    </div>
+    <a href="https://www.indiaculture.gov.in/dance" target="_blank" class="learn-more-button">Learn More</a>
+
+    <div class="popup" id="popup">
+        <img id="popup-img" src="emoji2.png" alt="Indian Man">
+        <div class="message" id="popup-message">Hey! Try hovering your mouse over those dots and witness the magic.</div>
+    </div>
+   
+    <script>
+        function goToHome() {
+            
+            window.location.href = "Index.html";
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const popup = document.getElementById('popup');
+            const popupMessage = document.getElementById('popup-message');
+            const popupImg = document.getElementById('popup-img');
+            
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.addEventListener('mouseover', () => {
+                    popupMessage.textContent = "Good! Explore the UNESCO sites in India";
+                    popupImg.src = "emoji1.png"; 
+                });
+                dot.addEventListener('mouseout', () => {
+                    popupMessage.textContent = "Hey! Try hovering your mouse over those dots and witness the magic.";
+                    popupImg.src = "emoji2.png"; 
+                });
+            });
+        });
+    </script>
+</body>
+</html>

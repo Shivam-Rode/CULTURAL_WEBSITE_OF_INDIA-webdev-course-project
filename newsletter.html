@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultural Website of India</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+
+  <body class="m-0 p-0 bg-black overflow-scroll">
+
+    <div class="fixed top-0 left-0 w-full bg-orange-500 shadow-md z-50">
+      <div class="flex justify-between items-center px-2 py-2">
+        <img src="/logo.png" class="text-white text-xl font-bold pl-10">
+        <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">&#9776;</button>
+        <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 bg-orange-500 flex flex-col items-center justify-center space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:items-center md:space-x-6 md:translate-x-0">
+          <button id="menu-close" class="absolute top-4 right-4 text-white text-2xl md:hidden focus:outline-none">&times;</button>
+          <a href="map.html" class="text-black text-base px-6 py-2 hover:text-white transition" target="_blank">Map</a>
+          <a href="/b.html" target="_blank" class="text-black text-base px-6 py-2 hover:text-white transition">Heritage Site</a>
+          <a href="geographic.html" class="text-black text-base px-6 py-2 hover:text-white transition">Geography</a>
+          <a href="religion.html" class="text-black text-base px-6 py-2 hover:text-white transition">Religion</a>
+          <a href="festivals.html" class="text-black text-base px-6 py-2 hover:text-white transition">Festival</a>
+          <a href="art.html" class="text-black text-base px-6 py-2 hover:text-white transition" target="_blank">Art</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center h-screen">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-96 transform transition duration-500 hover:scale-105">
+        <h2 class="text-orange-500 text-2xl font-bold text-center mb-4">Subscribe to Our Weekly Newsletter</h2>
+        <form id="newsletter-form" class="flex flex-col space-y-4">
+          <input type="text" id="name" placeholder="Enter your name" class="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-orange-500 transition" required>
+          <input type="email" id="email" placeholder="Enter your email" class="border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:border-orange-500 transition" required>
+          <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">Subscribe</button>
+        </form>
+        <p id="success-message" class="text-green-500 text-center mt-4 hidden">Thanks for subscribing! 🎉</p>
+      </div>
+    </div>
+
+    <script>
+   
+      emailjs.init("O4wqTnZNNJ2Cxhese"); 
+
+      document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const userName = document.getElementById("name").value.trim();
+        const userEmail = document.getElementById("email").value.trim();
+
+        if (userName && userEmail) {
+          emailjs.send("service_ib104pc", "template_vjkur0z", {
+            to_name: userName,  
+            to_email: userEmail,
+          })
+          .then(() => {
+            document.getElementById("success-message").classList.remove("hidden");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            alert("Confirmation email sent!");
+          })
+          .catch((error) => {
+            console.error("Email sending failed", error);
+            alert("Failed to send email. Try again.");
+          });
+        } else {
+          alert("Please enter a valid name and email!");
+        }
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+body::-webkit-scrollbar {
+    display: none;
+  }
+  @keyframes slideFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  .carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .slide-from-right {
+    animation: slideFromRight 0.5s ease-out;
+  }
+  .slide-from-left {
+    animation: slideFromLeft 0.5s ease-out;
+  }
